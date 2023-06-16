@@ -1,0 +1,55 @@
+{
+    "manifest_version": 3,
+    
+    "name": "Steam Tiny Enhancements",
+    "description": "Includes tiny enhancements to Steam Website.",
+    "version": "1.0.0",
+    "version_name": "v1.0.0",
+    "short_name": "STE",
+    "author": "danila.kononov.official@gmail.com",
+
+    "minimum_chrome_version": "88",
+    "incognito": "split",
+    "homepage_url": "https://www.github.com/i-Moony/steam-tiny-enhancements",
+
+    "action":
+    {
+        "default_icon":
+        {
+            "16": "static/SQE_16_TRANSPARENT.png",
+            "32": "static/SQE_32_TRANSPARENT.png",
+            "64": "static/SQE_64_TRANSPARENT.png",
+            "128": "static/SQE_128_TRANSPARENT.png",
+            "256": "static/SQE_256_TRANSPARENT.png"
+        },
+        "default_title": "STE"
+    },
+
+    "icons":
+    {
+        "16": "static/SQE_16_TRANSPARENT.png",
+        "32": "static/SQE_32_TRANSPARENT.png",
+        "64": "static/SQE_64_TRANSPARENT.png",
+        "128": "static/SQE_128_TRANSPARENT.png",
+        "256": "static/SQE_256_TRANSPARENT.png"
+    },
+
+    "content_scripts":
+    [
+        {
+            "matches": 
+            [
+                "https://*.steamcommunity.com/market/search*"
+            ],
+            "js":
+            [
+                "src/market.js"
+            ],
+            "css":
+            [
+                "src/market.css"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}

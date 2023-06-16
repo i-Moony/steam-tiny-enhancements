@@ -1,0 +1,23 @@
+#STE_jump_to
+{
+    padding: 0px 0px 24px 0px;
+    display: flex;
+    justify-content: space-between;
+    height: 36px;
+}
+
+#STE_page_jumper_input
+{
+    height: 28px;
+}
+
+#STE_page_jumper_submit
+{
+    margin: 0;
+    height: 28px;
+}
+
+#searchResults_ctn
+{
+    padding: 24px 0px 0px 0px;
+}
