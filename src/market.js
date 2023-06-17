@@ -51,6 +51,14 @@ function createSearch()
         goto.href = (entries && entries.length > 0) ? document.URL.replace(/#p([0-9]+)_popular_desc/g, `#p${page}_popular_desc`) : document.URL + `#p${page}_popular_desc`;
         goto.click();
     });
+
+    searchBox.addEventListener("keypress", (event) => {
+        if (event.key !== "Enter")
+            return;
+
+        event.preventDefault();
+        submitButtonDiv.click();
+    });
 };
 
 function updateSearch()
