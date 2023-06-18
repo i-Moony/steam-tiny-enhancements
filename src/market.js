@@ -1,6 +1,6 @@
 const searchPages = document.querySelector("#searchResults_links");
-let maxPage = parseInt(searchPages.lastChild.textContent)
-let entries = document.URL.match(/#p([0-9]+)_/g);
+let maxPage = parseInt(searchPages.lastChild.textContent);
+let entries = document.URL.match(/#p([0-9]+)/g);
 
 createSearch();
 
@@ -17,7 +17,7 @@ function createSearch()
     searchBox.type = "number";
     searchBox.min = 1;
     searchBox.max = maxPage;
-    searchBox.value = (entries && entries.length > 0) ? parseInt(entries[0].split("_")[0].slice(2)) : 1;
+    searchBox.value = (entries && entries.length > 0) ? parseInt(entries[0].slice(2)) : 1;
 
     ownDiv.appendChild(searchBox);
 
@@ -48,7 +48,7 @@ function createSearch()
         const page = Math.min(Math.floor(searchBox.valueAsNumber), maxPage);
 
         const goto = document.createElement("a");
-        goto.href = (entries && entries.length > 0) ? document.URL.replace(/#p([0-9]+)_/g, `#p${page}_`) : document.URL + `#p${page}_`;
+        goto.href = (entries && entries.length > 0) ? document.URL.replace(/#p([0-9]+)/g, `#p${page}`) : document.URL + `#p${page}_price_asc`;
         goto.click();
     });
 
@@ -64,9 +64,9 @@ function createSearch()
 function updateSearch()
 {
     maxPage = parseInt(searchPages.lastChild.textContent);
-    entries = document.URL.match(/#p([0-9]+)_popular_desc/g);
+    entries = document.URL.match(/#p([0-9]+)/g);
 
     const searchBox = document.querySelector("#STE_page_jumper_input");
     searchBox.max = maxPage;
-    searchBox.value = (entries && entries.length > 0) ? parseInt(entries[0].split("_")[0].slice(2)) : 1;
+    searchBox.value = (entries && entries.length > 0) ? parseInt(entries[0].slice(2)) : 1;
 };
