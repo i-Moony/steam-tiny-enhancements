@@ -48,7 +48,7 @@ function createSearch()
         const page = Math.min(Math.floor(searchBox.valueAsNumber), maxPage);
 
         const goto = document.createElement("a");
-        goto.href = (entries && entries.length > 0) ? document.URL.replace(/#p([0-9]+)_popular_desc/g, `#p${page}_popular_desc`) : document.URL + `#p${page}_popular_desc`;
+        goto.href = (entries && entries.length > 0) ? document.URL.replace(/#p([0-9]+)_/g, `#p${page}_`) : document.URL + `#p${page}_`;
         goto.click();
     });
 
