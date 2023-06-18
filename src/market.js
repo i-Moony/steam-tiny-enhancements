@@ -1,6 +1,6 @@
 const searchPages = document.querySelector("#searchResults_links");
 let maxPage = parseInt(searchPages.lastChild.textContent)
-let entries = document.URL.match(/#p([0-9]+)_popular_desc/g);
+let entries = document.URL.match(/#p([0-9]+)_/g);
 
 createSearch();
 
