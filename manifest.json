@@ -14,11 +14,22 @@
 
     "icons":
     {
-        "16": "static/SQE_16_TRANSPARENT.png",
-        "32": "static/SQE_32_TRANSPARENT.png",
-        "64": "static/SQE_64_TRANSPARENT.png",
-        "128": "static/SQE_128_TRANSPARENT.png",
-        "256": "static/SQE_256_TRANSPARENT.png"
+        "16": "static/STE_SEMI_TRANSPARENT_16.png",
+        "32": "static/STE_SEMI_TRANSPARENT_32.png",
+        "48": "static/STE_SEMI_TRANSPARENT_48.png",
+        "64": "static/STE_SEMI_TRANSPARENT_64.png",
+        "96": "static/STE_SEMI_TRANSPARENT_96.png",
+        "128": "static/STE_SEMI_TRANSPARENT_128.png",
+        "256": "static/STE_SEMI_TRANSPARENT_256.png"
+    },
+
+    "browser_specific_settings":
+    {
+        "gecko":
+        {
+            "id": "steam-tiny-enhancements@moony.lol",
+            "strict_min_version": "96.0"
+        }
     },
 
     "content_scripts":
@@ -35,6 +46,19 @@
             "css":
             [
                 "src/market.css"
+            ],
+            "run_at": "document_idle",
+            "all_frames": false,
+            "match_about_blank": false
+        },
+        {
+            "matches":
+            [
+                "https://*.steamcommunity.com/id/*/inventory/*"
+            ],
+            "js":
+            [
+                "src/inventory.js"
             ],
             "run_at": "document_idle",
             "all_frames": false,
