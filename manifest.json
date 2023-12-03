@@ -1,26 +1,26 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     
     "name": "Steam Tiny Enhancements",
-    "description": "Includes tiny enhancements to Steam Website.",
-    "version": "1.0.0",
+    "description": "A small extension that applies tiny enhancements to Steam.",
+    "version": "2.0.0",
     "short_name": "STE",
-    "author": "moony aka Danila Kononov",
+    "author": "Danila Kononov aka moony",
     "developer":
     {
-        "name": "moony aka Danila Kononov",
+        "name": "Danila Kononov aka moony",
         "url": "https://github.com/i-Moony/steam-tiny-enhancements/"
     },
 
     "icons":
     {
-        "16": "static/STE_SEMI_TRANSPARENT_16.png",
-        "32": "static/STE_SEMI_TRANSPARENT_32.png",
-        "48": "static/STE_SEMI_TRANSPARENT_48.png",
-        "64": "static/STE_SEMI_TRANSPARENT_64.png",
-        "96": "static/STE_SEMI_TRANSPARENT_96.png",
-        "128": "static/STE_SEMI_TRANSPARENT_128.png",
-        "256": "static/STE_SEMI_TRANSPARENT_256.png"
+        "16": "static/ste-semi-transparent-16.png",
+        "32": "static/ste-semi-transparent-32.png",
+        "48": "static/ste-semi-transparent-48.png",
+        "64": "static/ste-semi-transparent-64.png",
+        "96": "static/ste-semi-transparent-96.png",
+        "128": "static/ste-semi-transparent-128.png",
+        "256": "static/ste-semi-transparent-256.png"
     },
 
     "browser_specific_settings":
@@ -28,41 +28,12 @@
         "gecko":
         {
             "id": "steam-tiny-enhancements@moony.lol",
-            "strict_min_version": "96.0"
+            "strict_min_version": "109.0"
         }
     },
 
-    "content_scripts":
+    "permissions":
     [
-        {
-            "matches": 
-            [
-                "https://*.steamcommunity.com/market/search*"
-            ],
-            "js":
-            [
-                "src/market.js"
-            ],
-            "css":
-            [
-                "src/market.css"
-            ],
-            "run_at": "document_idle",
-            "all_frames": false,
-            "match_about_blank": false
-        },
-        {
-            "matches":
-            [
-                "https://*.steamcommunity.com/id/*/inventory/*"
-            ],
-            "js":
-            [
-                "src/inventory.js"
-            ],
-            "run_at": "document_idle",
-            "all_frames": false,
-            "match_about_blank": false
-        }
+        "storage"
     ]
 }
