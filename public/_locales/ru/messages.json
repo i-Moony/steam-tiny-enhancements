@@ -1,0 +1,13 @@
+{
+    "extensionDescription":
+    {
+        "message": "Небольшое расширение, добавляющее маленькие улучшения для Steam.",
+        "description": "Описание расширения."
+    },
+    
+    "authorName":
+    {
+        "message": "Данила Кононов ака moony",
+        "description": "Имя разработчика."
+    }
+}

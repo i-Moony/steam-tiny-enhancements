@@ -1,0 +1,15 @@
+{
+    "name": "steam-tiny-enhancements",
+    "type": "module",
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "@vitejs/plugin-vue": "^4.5.1",
+        "vite": "^5.0.4",
+        "vite-plugin-web-extension": "^4.0.0",
+        "vue": "^3.3.9",
+        "vue-router": "^4.2.5"
+    }
+}

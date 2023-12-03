@@ -1,0 +1,13 @@
+{
+    "extensionDescription":
+    {
+        "message": "A small extension that applies tiny enhancements to Steam.",
+        "description": "Description of the extension."
+    },
+    
+    "authorName":
+    {
+        "message": "Danila Kononov aka moony",
+        "description": "Name of the developer."
+    }
+}
