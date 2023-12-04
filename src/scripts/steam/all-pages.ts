@@ -1,6 +1,6 @@
 import getSessionId from "../../lib/get-session-id";
 import getUserId from "../../lib/get-user-id";
-import { setManagedStorage, getManagedStorage } from "../../lib/storage";
+import { SessionStorage } from "../../lib/storage/session";
 
 getUserData();
 
@@ -9,15 +9,15 @@ async function getUserData()
     const userId = getUserId();
     const sesionId = getSessionId();
 
-    let storage = await getManagedStorage();
+    let storage = await SessionStorage.getAll();
 
     if (userId)
-        storage.steam.user.id = userId;
+        storage.userId = userId;
 
     if (sesionId)
-        storage.steam.user.session.id = sesionId;
+        storage.sessionId = sesionId;
 
-    await setManagedStorage(storage);
+    await SessionStorage.set(storage);
 
     return;
 };
