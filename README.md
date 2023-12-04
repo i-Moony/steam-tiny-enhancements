@@ -2,7 +2,7 @@
     <br>
     <p>
         <a href = "https://addons.mozilla.org/en-US/firefox/addon/steam-tiny-enhancements/">
-            <img src = "./static/ste-semi-transparent-256.png" alt = "logo" width="100"/>
+            <img src = "./public/static/ste-semi-transparent-256.png" alt = "logo" width="100"/>
             <h1 >Steam Tiny Enhancements</h1>
         </a>
     </p>
