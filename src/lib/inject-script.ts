@@ -22,9 +22,9 @@ function injectScript(script:string, readAttribute:string = undefined): unknown
 
     const tempElement = document.createElement("script");
 
-    tempElement.setAttribute("oninject", `${script};`);
-    tempElement.dispatchEvent(new CustomEvent("inject"));
-    tempElement.removeAttribute("oninject");
+    tempElement.setAttribute("onreset", `${script};`);
+    tempElement.dispatchEvent(new CustomEvent("reset"));
+    tempElement.removeAttribute("onreset");
 
     const body = document.querySelector("body");
     const result = body.getAttribute(readAttribute);

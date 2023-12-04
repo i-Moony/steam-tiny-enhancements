@@ -4,7 +4,7 @@ declare var g_sessionID: string;
 
 function getSessionId(): string | null
 {
-    const result = injectScript(`${getSessionIdScript.toString()}; getSessionIdScript()`, "steamSessionId");
+    const result = injectScript(`${getSessionIdScript}; ${getSessionIdScript.name}()`, "steamSessionId");
 
     return result
         ? result as string
@@ -13,7 +13,13 @@ function getSessionId(): string | null
 
 function getSessionIdScript()
 {
-    document.querySelector("body").setAttribute("steamUserId", g_sessionID);
+    try
+    {
+        document.querySelector("body").setAttribute("steamSessionId", g_sessionID);
+    }
+    catch (e) {};
+
+    return;
 };
 
 export default getSessionId;

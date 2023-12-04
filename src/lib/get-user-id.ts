@@ -4,7 +4,7 @@ declare var g_steamID: string;
 
 function getUserId(): string | null
 {
-    const result = injectScript(`${getUserIdScript.toString()}; getUserIdScript()`, "steamUserId");
+    const result = injectScript(`${getUserIdScript}; ${getUserIdScript.name}()`, "steamUserId");
 
     return result
         ? result as string
@@ -13,7 +13,13 @@ function getUserId(): string | null
 
 function getUserIdScript()
 {
-    document.querySelector("body").setAttribute("steamUserId", g_steamID);
+    try
+    {
+        document.querySelector("body").setAttribute("steamUserId", g_steamID);
+    }
+    catch (e) {};
+
+    return;
 };
 
 export default getUserId;
