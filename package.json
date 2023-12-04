@@ -6,6 +6,7 @@
         "build": "vite build"
     },
     "dependencies": {
+        "@types/firefox-webext-browser": "^120.0.0",
         "@vitejs/plugin-vue": "^4.5.1",
         "vite": "^5.0.4",
         "vite-plugin-web-extension": "^4.0.0",
