@@ -43,6 +43,22 @@
         "type": "module"
     },
 
+    "content_scripts":
+    [
+        {
+            "matches":
+            [
+                "*://*.steamcommunity.com/*",
+                "*://*.steampowered.com/*"
+            ],
+            "js":
+            [
+                "src/scripts/steam/all-pages.ts"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+
     "permissions":
     [
         "storage"
