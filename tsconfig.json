@@ -16,7 +16,7 @@
         //Modules
         "lib": ["ESNext", "DOM"],
         "target": "ESNext",
-        "module": "CommonJS",
+        "module": "EsNext",
         "moduleResolution": "Node",
         
         //Emit
