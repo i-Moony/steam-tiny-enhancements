@@ -1,0 +1,21 @@
+name: Feature Request
+description: "For requesting new features or improvements to existing ones"
+labels:
+  - enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        This form is for requesting new features and should not be used for anything else.
+      
+  - type: textarea
+    attributes:
+      label: Description
+      description: >-
+        Describe your desired feature in every detail. You should explain what problem it is solving, what alternatives you tried or aware of, and all aspects what you expect from the feature.
+      placeholder: >-
+        I want to have this option...
+        I think it is important, because...
+        I think that there are some alternatives like...
+        I think that this feature should have at least these aspects:

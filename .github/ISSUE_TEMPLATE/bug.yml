@@ -1,0 +1,61 @@
+name: Bug Report
+description: "This is a form for reporting bugs. For rate limits look for another preset"
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        **Note: this issue tracker is intended to track bugs and other issues. This is not a support requests thread. If you need any other help, visit our [Discord Server]().**
+        <br><br>
+
+        Also, thanks for finding time to report an issue!
+    
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: >-
+        Use this section to describe the issue you are experiencing in as much detail as possible. The description should explain what is happening and why you think it is an unintended behaviour.
+        **Pro-tip:** If you have any other information (screenshots, videos, etc.) you can drop these samples down here.
+      placeholder: >-
+        So, I found out that if I click here and there this thing will happen...
+        I believe it is unintended behaviour, because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Reproduction Steps
+      description: >-
+        Provide as much information as you're able on how to reproduce this behaviour. Make sure your instructions are clear and consise, because other people will need to be able to follow your guide in order to re-create this issue and understand how to fix it.
+        **Pro-tip:** A common way to fill this section is creating a step-by-step tutorial.
+      placeholder: >-
+        1. Go to settings.
+        2. Go to this tab.
+        3. Click this button...
+    validations:
+      required: true
+
+  - type: textarea
+    id: settings
+    attributes:
+      label: Your settings
+      description: >-
+        You can go to settings and visit developer tab. Find there a button named "Copy clean debug info" and click it.
+        **Pro-tip:** If you went to this page from the help tab, chances are that your buffer already contains it.
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Issue priority
+      description: Please, be real here. If you need to elaborate on your reasoning, use bug description field.
+      multiple: false
+      options:
+        - "Low (slightly annoying, but nothing crazy)"
+        - "Medium (should be fixed until the near major release)"
+        - "High (should be fixed ASAP)"
+    validations:
+      required: true
