@@ -8,7 +8,7 @@ interface SessionStorageData
 
 class SessionStorage
 {
-    public static async get(key:string): Promise<unknown>
+    public static async get<T>(key:string): Promise<T | undefined>
     {
         const storage = await LocalStorage.get("session");
 
