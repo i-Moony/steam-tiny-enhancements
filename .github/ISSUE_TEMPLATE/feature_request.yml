@@ -16,6 +16,9 @@ body:
         Describe your desired feature in every detail. You should explain what problem it is solving, what alternatives you tried or aware of, and all aspects what you expect from the feature.
       placeholder: >-
         I want to have this option...
+
         I think it is important, because...
+
         I think that there are some alternatives like...
+        
         I think that this feature should have at least these aspects:

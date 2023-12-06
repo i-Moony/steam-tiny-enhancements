@@ -18,9 +18,11 @@ body:
       label: Bug Description
       description: >-
         Use this section to describe the issue you are experiencing in as much detail as possible. The description should explain what is happening and why you think it is an unintended behaviour.
+        
         **Pro-tip:** If you have any other information (screenshots, videos, etc.) you can drop these samples down here.
       placeholder: >-
         So, I found out that if I click here and there this thing will happen...
+
         I believe it is unintended behaviour, because...
     validations:
       required: true
@@ -31,10 +33,13 @@ body:
       label: Reproduction Steps
       description: >-
         Provide as much information as you're able on how to reproduce this behaviour. Make sure your instructions are clear and consise, because other people will need to be able to follow your guide in order to re-create this issue and understand how to fix it.
+        
         **Pro-tip:** A common way to fill this section is creating a step-by-step tutorial.
       placeholder: >-
         1. Go to settings.
+
         2. Go to this tab.
+
         3. Click this button...
     validations:
       required: true
@@ -45,7 +50,10 @@ body:
       label: Your settings
       description: >-
         You can go to settings and visit developer tab. Find there a button named "Copy clean debug info" and click it.
+        
         **Pro-tip:** If you went to this page from the help tab, chances are that your buffer already contains it.
+    validations:
+      required: true
       
   - type: dropdown
     id: priority
