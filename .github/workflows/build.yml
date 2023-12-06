@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.JS
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
