@@ -15,7 +15,7 @@ const allowedAttributes =
  * @param readAttribute Optional. If defined function validates it using {@link allowedAttributes} and returns value of it.
  * @returns {unknown} It may be null or any other value.
  */
-function injectScript(script:string, readAttribute:string = undefined): unknown
+function injectScript(script:string, readAttribute:string = undefined): string
 {
     if (readAttribute && !allowedAttributes.includes(readAttribute))
         return null;

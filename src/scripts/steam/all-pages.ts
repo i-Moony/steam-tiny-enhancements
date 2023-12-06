@@ -1,5 +1,5 @@
-import getSessionId from "../../lib/get-session-id";
-import getUserId from "../../lib/get-user-id";
+import getSessionId from "../../lib/inject/get-session-id";
+import getUserId from "../../lib/inject/get-user-id";
 import { SessionStorage } from "../../lib/storage/session";
 
 getUserData();
