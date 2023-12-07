@@ -44,6 +44,13 @@ class LocalStorage
         return;
     };
 
+    public static async remove(data:Array<keyof LocalStorageData> | string[] | string): Promise<void>
+    {
+        await browser.storage.local.remove(data);
+
+        return;
+    };
+
     public static async init(developer = false): Promise<void>
     {
         let data = LocalStorage.defaultStorage;

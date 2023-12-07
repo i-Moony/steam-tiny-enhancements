@@ -32,6 +32,18 @@ class SessionStorage
         return LocalStorage.set({session: updateData});
     };
 
+    public static async remove(data:Array<keyof SessionStorageData> | string[]): Promise<void>
+    {
+        let updateData = await this.getAll();
+
+        for (const key of data)
+        {
+            delete updateData[key];
+        };
+
+        return LocalStorage.set({session: updateData});
+    };
+
     public static async flush(): Promise<void>
     {
         return LocalStorage.set({session: {}});
