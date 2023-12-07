@@ -59,6 +59,17 @@ class LocalStorage
 
         return LocalStorage.set(data);
     };
+
+    public static async handleExtensionUpdate(): Promise<void>
+    {
+        let currentStorage = await this.getAll();
+
+        for (const key of Object.keys(this.defaultStorage))
+            if (!currentStorage[key])
+                currentStorage[key] = this.defaultStorage[key];
+
+        return this.set(currentStorage);
+    };
 };
 
 export
