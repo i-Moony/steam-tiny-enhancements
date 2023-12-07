@@ -24,7 +24,12 @@ class SessionStorage
 
     public static async set(data:Partial<SessionStorageData>): Promise<void>
     {
-        return LocalStorage.set({session: data});
+        let updateData = await this.getAll();
+
+        for (const key of Object.keys(data))
+            updateData[key] = data[key];
+
+        return LocalStorage.set({session: updateData});
     };
 
     public static async flush(): Promise<void>
