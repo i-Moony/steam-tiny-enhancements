@@ -3,11 +3,16 @@ import { SessionStorageData } from "./session";
 interface LocalStorageData
 {
     session: SessionStorageData,
+    debug: boolean,
 };
 
 class LocalStorage
 {
-    public static defaultStorage:LocalStorageData = {session: {}};
+    public static defaultStorage:LocalStorageData =
+    {
+        session: {},
+        debug: false
+    };
 
     public static async get<T>(key:string): Promise<T | undefined>
     {
@@ -23,6 +28,15 @@ class LocalStorage
         return storage as LocalStorageData;
     };
 
+    public static async getAllClean(): Promise<Omit<LocalStorageData, "session">>
+    {
+        const storage = await this.getAll();
+
+        delete storage.session;
+
+        return storage;
+    };
+
     public static async set(data:Partial<LocalStorageData>): Promise<void>
     {
         await browser.storage.local.set(data);
@@ -30,9 +44,13 @@ class LocalStorage
         return;
     };
 
-    public static async init(): Promise<void>
+    public static async init(developer = false): Promise<void>
     {
-        return LocalStorage.set(LocalStorage.defaultStorage);
+        let data = LocalStorage.defaultStorage;
+
+        data.debug = developer;
+
+        return LocalStorage.set(data);
     };
 };
 
