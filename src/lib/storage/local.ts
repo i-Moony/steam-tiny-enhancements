@@ -11,10 +11,10 @@ class LocalStorage
     public static defaultStorage:LocalStorageData =
     {
         session: {},
-        debug: false
+        debug: false,
     };
 
-    public static async get<T>(key:string): Promise<T | undefined>
+    public static async get<T>(key:keyof LocalStorageData): Promise<T | undefined>
     {
         const storage = await browser.storage.local.get(key);
 
