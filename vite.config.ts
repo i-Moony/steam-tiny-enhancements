@@ -16,4 +16,8 @@ export default defineConfig
         }),
         vuePlugin(),
     ],
+    build:
+    {
+        outDir: "dist/firefox",
+    },
 });
