@@ -8,6 +8,8 @@
     </p>
     <p>
         <a href = "https://addons.mozilla.org/en-US/firefox/addon/steam-tiny-enhancements/"><img src = "https://img.shields.io/amo/v/steam-tiny-enhancements?style=for-the-badge&logo=firefox" alt = "addon-version" /></a>
+        <a href = "https://addons.mozilla.org/en-US/firefox/addon/steam-tiny-enhancements/"><img src = "https://img.shields.io/amo/users/steam-tiny-enhancements?style=for-the-badge&logo=firefox" /></a>
+        <br>
         <a href = "https://github.com/i-Moony/steam-tiny-enhancements/"><img src = "https://img.shields.io/github/license/i-Moony/steam-tiny-enhancements?style=for-the-badge&logo=github" alt = "license" /></a>
         <a href = "https://github.com/i-Moony/steam-tiny-enhancements/"><img src = "https://img.shields.io/github/issues/i-Moony/steam-tiny-enhancements?style=for-the-badge&logo=github" alt = "issues" /></a>
     </p>
@@ -22,6 +24,9 @@ Every feature is configurable.
 # Current features:
 * Jump to certain page on Steam Community Market
 * Bulk sell any items from your inventory
+
+# Development & Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 # License:
 
