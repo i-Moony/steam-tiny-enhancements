@@ -65,8 +65,25 @@
         "page": "src/pages/options/index.html"
     },
 
+    "action":
+    {
+        "default_icon":
+        {
+            "16": "static/ste-semi-transparent-16.png",
+            "32": "static/ste-semi-transparent-32.png",
+            "48": "static/ste-semi-transparent-48.png",
+            "64": "static/ste-semi-transparent-64.png",
+            "96": "static/ste-semi-transparent-96.png",
+            "128": "static/ste-semi-transparent-128.png",
+            "256": "static/ste-semi-transparent-256.png"
+        },
+
+        "default_title": "Steam Tiny Enhancements"
+    },
+
     "permissions":
     [
+        "notifications",
         "storage"
     ]
 }
