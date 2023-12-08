@@ -9,5 +9,49 @@
     {
         "message": "Danila Kononov aka moony",
         "description": "Name of the developer."
+    },
+
+    "userCanTurnOffNotifications":
+    {
+        "message": "You can always turn off these notifications via extension settings.",
+        "description": "Friendly reminder that user can disable notifications. Works only in Chrome (currently never)."
+    },
+
+    "onInstallNotificationTitle":
+    {
+        "message": "Thanks for the install!",
+        "descritpion": "Thank user for the installation."
+    },
+
+    "onInstallNotificationMessage":
+    {
+        "message": "Currently every feature is disabled. Click here to customize your experience via settings!",
+        "description": "Remind user that every feature is disabled, and he needs to customize his experience."
+    },
+
+    "onUpdateNotificationTitle":
+    {
+        "message": "The extension received an update!",
+        "description": "Notify user about an update."
+    },
+
+    "onUpdateNotificationMessage":
+    {
+        "message": "Extension updated from $PREVIOUS_VERSION$ to $NEW_VERSION$ version. Read more about the new update here!",
+        "description": "Encourage user to read the changelog.",
+        "placeholders":
+        {
+            "previous_version":
+            {
+                "content": "$1",
+                "example": "1.0.0"
+            },
+
+            "new_version":
+            {
+                "content": "$2",
+                "example": "1.1.0"
+            }
+        }
     }
 }

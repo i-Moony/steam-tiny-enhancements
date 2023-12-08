@@ -9,5 +9,49 @@
     {
         "message": "Данила Кононов ака moony",
         "description": "Имя разработчика."
+    },
+
+    "userCanTurnOffNotifications":
+    {
+        "message": "Вы всегда можете выключить уведомления в настройках расширения.",
+        "description": "Напоминание, что уведомления расширения можно выключить в настройках. Работает только в Chrome (т.е. пока никогда)."
+    },
+
+    "onInstallNotificationTitle":
+    {
+        "message": "Спасибо за установку!",
+        "descritpion": "Поблагодарить пользователя за установку."
+    },
+
+    "onInstallNotificationMessage":
+    {
+        "message": "По умолчанию, все функции расширения выключены. Нажмите, чтобы настроить всё, как вам было бы удобно.",
+        "description": "Напомнить пользователю, что все функции выключены и предложить настроить расширение."
+    },
+
+    "onUpdateNotificationTitle":
+    {
+        "message": "Расширение получило обновление!",
+        "description": "Уведомить пользователя об обновлении."
+    },
+
+    "onUpdateNotificationMessage":
+    {
+        "message": "Расширение обновилось с $PREVIOUS_VERSION$ до $NEW_VERSION$ версии. Узнайте больше об обновлении здесь!",
+        "description": "Предложить пользователю узнать больше об обновлении.",
+        "placeholders":
+        {
+            "previous_version":
+            {
+                "content": "$1",
+                "example": "1.0.0"
+            },
+
+            "new_version":
+            {
+                "content": "$2",
+                "example": "1.1.0"
+            }
+        }
     }
 }

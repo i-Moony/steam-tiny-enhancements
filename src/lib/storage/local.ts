@@ -4,6 +4,7 @@ interface LocalStorageData
 {
     session: SessionStorageData,
     debug: boolean,
+    notifyOnUpdate: boolean,
 };
 
 class LocalStorage
@@ -12,6 +13,7 @@ class LocalStorage
     {
         session: {},
         debug: false,
+        notifyOnUpdate: true,
     };
 
     public static async get<T>(key:keyof LocalStorageData): Promise<T | undefined>
