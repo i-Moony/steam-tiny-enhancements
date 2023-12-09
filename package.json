@@ -1,9 +1,11 @@
 {
     "name": "steam-tiny-enhancements",
     "type": "module",
-    "scripts": {
-        "dev": "vite dev",
-        "build": "vite build"
+
+    "scripts":
+    {
+        "build": "vite build",
+        "watch": "vite build --watch --mode development"
     },
     "dependencies": {
         "@types/firefox-webext-browser": "^120.0.0",
