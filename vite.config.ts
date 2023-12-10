@@ -9,10 +9,11 @@ export default defineConfig
         webExtension
         ({
             browser: "firefox",
-            webExtConfig:
-            {
-                firefox: "firefoxdeveloperedition",
-            },
+            disableAutoLaunch: true,
+            watchFilePaths:
+            [
+                "src/"
+            ]
         }),
         vuePlugin(),
     ],
