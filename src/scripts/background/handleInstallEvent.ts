@@ -1,4 +1,6 @@
 import setBadgeIcon from "../../lib/misc/badge-icon";
+import createNotification from "../../lib/notification/create";
+import NotificationId from "../../lib/notification/id";
 import { LocalStorage } from "../../lib/storage/local";
 
 async function handleInstallEvent({ reason, temporary, previousVersion }: browser.runtime._OnInstalledDetails): Promise<void>
@@ -18,20 +20,7 @@ async function handleInstall(temporary:boolean): Promise<void>
 
     setBadgeIcon("I");
 
-    await browser.notifications.create
-    ({
-        type: "basic",
-        iconUrl: browser.runtime.getURL("static/ste-square-256.png"),
-
-        title: browser.i18n.getMessage("onInstallNotificationTitle"),
-        message: browser.i18n.getMessage("onInstallNotificationMessage"),
-        /*
-        Leave it here until Chrome support arrives.
-        Firefox doesn't support any of these.
-        contextMessage: browser.i18n.getMessage("userCanTurnOffNotifications"),
-        isClickable: true,
-        */
-    });
+    await createNotification(NotificationId.onInstall);
 
     return;
 };
@@ -48,20 +37,9 @@ async function handleUpdate(previousVersion:string): Promise<void>
 
     if (notBugfixUpdate(previousVersion, currentVersion) && settings.notifyOnUpdate)
     {
-        await browser.notifications.create
-        ({
-            type: "basic",
-            iconUrl: browser.runtime.getURL("static/ste-square-256.png"),
+        const translatedMessage = browser.i18n.getMessage(`${NotificationId.onUpdate}Message`, [previousVersion, currentVersion]);
 
-            title: browser.i18n.getMessage("onUpdateNotificationTitle"),
-            message: browser.i18n.getMessage("onUpdateNotificationMessage", [previousVersion, currentVersion]),
-            /*
-            Leave it here until Chrome support arrives.
-            Firefox doesn't support any of these.
-            contextMessage: browser.i18n.getMessage("userCanTurnOffNotifications"),
-            isClickable: true,
-            */
-        });
+        await createNotification(NotificationId.onUpdate, {message: translatedMessage});
     };
 
     return;
