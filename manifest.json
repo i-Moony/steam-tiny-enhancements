@@ -78,7 +78,8 @@
             "256": "static/ste-semi-transparent-256.png"
         },
 
-        "default_title": "Steam Tiny Enhancements"
+        "default_title": "Steam Tiny Enhancements",
+        "default_popup": "src/pages/popup/index.html"
     },
 
     "permissions":
