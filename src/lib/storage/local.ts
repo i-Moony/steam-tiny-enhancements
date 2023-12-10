@@ -1,20 +1,32 @@
-import { SessionStorageData } from "./session";
-
-interface LocalStorageData
+interface StorageData
 {
-    session: SessionStorageData,
     debug: boolean,
     notifyOnUpdate: boolean,
 };
+
+interface SensitiveStorageData
+{
+    sessionId: string,
+    userId: string,
+};
+
+interface LocalStorageData extends StorageData, SensitiveStorageData {};
 
 class LocalStorage
 {
     public static defaultStorage:LocalStorageData =
     {
-        session: {},
+        sessionId: null,
+        userId: null,
         debug: false,
         notifyOnUpdate: true,
     };
+
+    public static sensitiveKeys:Array<keyof SensitiveStorageData> =
+    [
+        "sessionId",
+        "userId",
+    ];
 
     public static async get<T>(key:keyof LocalStorageData): Promise<T | undefined>
     {
@@ -30,13 +42,14 @@ class LocalStorage
         return storage as LocalStorageData;
     };
 
-    public static async getAllClean(): Promise<Omit<LocalStorageData, "session">>
+    public static async getAllClean(): Promise<StorageData>
     {
         const storage = await this.getAll();
 
-        delete storage.session;
+        for (const key of this.sensitiveKeys)
+            delete storage[key];
 
-        return storage;
+        return storage as StorageData;
     };
 
     public static async set(data:Partial<LocalStorageData>): Promise<void>
@@ -77,5 +90,7 @@ class LocalStorage
 export
 {
     LocalStorage,
+    StorageData,
+    SensitiveStorageData,
     LocalStorageData,
 };

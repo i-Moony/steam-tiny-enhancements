@@ -1,23 +1,15 @@
 import getSessionId from "../../lib/inject/get-session-id";
 import getUserId from "../../lib/inject/get-user-id";
-import { SessionStorage } from "../../lib/storage/session";
+import { LocalStorage } from "../../lib/storage/local";
 
 getUserData();
 
 async function getUserData()
 {
     const userId = getUserId();
-    const sesionId = getSessionId();
+    const sessionId = getSessionId();
 
-    let storage = await SessionStorage.getAll();
-
-    if (userId)
-        storage.userId = userId;
-
-    if (sesionId)
-        storage.sessionId = sesionId;
-
-    await SessionStorage.set(storage);
+    await LocalStorage.set({ userId, sessionId });
 
     return;
 };
