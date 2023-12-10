@@ -5,3 +5,4 @@
 - [ ] Onboarding page
 - [ ] Upboarding page
 - [ ] Survey on the reasons to quit using extension
+- [ ] Interactive walkthrough
