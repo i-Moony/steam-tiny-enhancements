@@ -1,7 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+    import Header from './components/Header.vue';
+</script>
 
 <template>
-    <p>Hello, World!</p>
+    <Header></Header>
+    <RouterView></RouterView>
 </template>
 
-<style scoped></style>
+<style>
+    html
+    {
+        background:linear-gradient(0deg,#1b2838,#254c6b);
+        min-width: max(100%, 1000px);
+        min-height: max(100%, 600px);
+    }
+</style>
