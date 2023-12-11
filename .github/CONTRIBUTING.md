@@ -15,13 +15,12 @@ If you wish to contribute to Steam Tiny Enhancements codebase, feel free to fork
 
 # Testing locally:
 **If you want to text extension locally:**
-1. Run `npm run build` if you did not run it before.
+1. Run `npm run watch` to enable automatic rebuilding on saving changes.
 2. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`.
 3. Press `Load Temporary Add-on...`.
-4. Test your feature (but be careful, if you are not familiar with Steam rate limits, you may accidentally be rate-limited or even banned).
-
-## Important notice:
-*While you can use `npm run dev` script, I do not recommend it. On my machine it is very buggy. Also, don't forget to either temporary specify your Firefox version in `vite.config.ts` or to install Firefox Developer Edition.*
+4. Load extension.
+5. If you updated some lines in the code hit `Reload` button to apply them.
+6. Test your feature (but be careful, if you are not familiar with Steam rate limits, you may accidentally be rate-limited or even banned).
 
 # Extension structure:
 * `assets` folder contains various assets for the extension.
@@ -29,10 +28,8 @@ If you wish to contribute to Steam Tiny Enhancements codebase, feel free to fork
 * `src` folder contains files and folders which **ARE** modified during build process.
     * `lib` folder contains every function and class that is reusable through the whole extension.
     * `pages` folder contains every file that is related to building extension's pages.
-        * `onboarding` contains page that is shown when extension is first installed.
         * `options` contains options page for the extension.
         * `popup` contains page what is shown when user clicks extension action button.
-        * `upboarding` contains page that is shown to user when extension is updated to next minor or major version.
     * `scripts` folder contains every script that is mentioned in `manifest.json` file.
     * `vite-env.d.ts` contains declaration for `.vue` files.
 * `manifest.json` is extension's essential file that contains all necessary information for browser.
