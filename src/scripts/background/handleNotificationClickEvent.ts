@@ -1,6 +1,6 @@
 import NotificationId from "../../lib/notification/id";
 
-async function handleNotificationClick(notificationId:NotificationId): Promise<void>
+async function handleNotificationClickEvent(notificationId:NotificationId): Promise<void>
 {
     console.log(notificationId);
 
@@ -31,4 +31,4 @@ async function openChangelogPage(): Promise<void>
     return;
 };
 
-export default handleNotificationClick;
+export default handleNotificationClickEvent;
