@@ -84,7 +84,6 @@
 
     "permissions":
     [
-        "alarms",
         "notifications",
         "storage"
     ]
