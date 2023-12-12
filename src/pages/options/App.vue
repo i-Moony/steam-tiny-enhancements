@@ -10,7 +10,8 @@
 <style>
     html
     {
-        background:linear-gradient(0deg,#1b2838,#254c6b);
+        background: #2a2d34;
+        /* background: radial-gradient(#2a2d34, #3e424d); */
         min-width: max(100%, 1000px);
         min-height: max(100%, 600px);
     }
