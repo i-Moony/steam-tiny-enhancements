@@ -37,7 +37,7 @@
     .dropdown-title
     {
         text-transform: uppercase;
-    };
+    }
     
     .dropdown
     {
