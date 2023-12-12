@@ -2,7 +2,8 @@
 </script>
 
 <template>
-    <p>Developer</p>
+    <p>General</p>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import { createRouter, createWebHashHistory } from "vue-router";
 import App from "./App.vue";
 import Settings from "./routes/Settings.vue";
+import General from "./routes/Settings/General.vue";
 import Developer from "./routes/Settings/Developer.vue";
 import Inventory from "./routes/Inventory.vue";
 import Onboarding from "./routes/Onboarding.vue";
@@ -16,11 +17,19 @@ const router = createRouter
     routes:
     [
         {
+            path: "/",
+            redirect: "/settings",
+        },
+        {
             path: "/settings",
             component: Settings,
-            alias: "/",
+            redirect: "/settings/general",
             children:
             [
+                {
+                    path: "general",
+                    component: General,
+                },
                 {
                     path: "developer",
                     component: Developer,
