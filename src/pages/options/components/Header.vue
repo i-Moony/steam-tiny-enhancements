@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import RouterCategory from './RouterCategory.vue';
+import RouterCategoryEntry from './RouterCategoryEntry.vue';
 </script>
 
 <template>
-    <header class="flex justify-center align-middle bg-steam-dark-bg text-steam-light sticky flex-wrap uppercase">
-        <div id="extenion-logo-container" class="flex items-center w-[62rem] h-20">
+    <header id="main-header" class="flex justify-center align-middle bg-steam-dark-bg text-steam-light sticky flex-wrap">
+        <div id="extenion-logo-container" class="flex items-center w-[62rem] h-20 uppercase">
             <div id="logo-wrapper h-14">
                 <img class="h-14" src="/static/ste-transparent-256.png" id="extension-logo" draggable="false" />
             </div>
@@ -12,10 +13,18 @@ import RouterCategory from './RouterCategory.vue';
         </div>
         <hr id="split-header">
         <div id="router-links" class="flex items-center w-[62rem] h-10">
-            <router-category title="Settings" default-href="/settings"/>
+            <router-category title="Settings" default-href="/settings">
+                <router-category-entry to="/settings/general">
+                    General
+                </router-category-entry>
+                <router-category-entry to="/settings/developer">
+                    Developer
+                </router-category-entry>
+            </router-category>
         </div>
         <hr id="down-outline">
     </header>
+    <hr id="down-outline-glow">
 </template>
 
 <style scoped>
@@ -69,5 +78,20 @@ import RouterCategory from './RouterCategory.vue';
         margin: 0;
         border: 0;
         background: linear-gradient(0.25turn, #00ccff, #3366ff);
+    }
+
+    #down-outline-glow
+    {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        filter: blur(10px);
+        z-index: -5;
+        background: linear-gradient(0.25turn, #00ccff, #3366ff);
+    }
+
+    #router-links *
+    {
+        padding-right: 1.5rem;
     }
 </style>
