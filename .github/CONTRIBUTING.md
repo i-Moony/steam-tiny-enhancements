@@ -24,7 +24,7 @@ If you wish to contribute to Steam Tiny Enhancements codebase, feel free to fork
 
 # Extension structure:
 * `assets` folder contains various assets for the extension.
-* `public` folder contains `_locales`, `static` and other files, folder that **ARE NOT** modified during build stage and copied straight to the `dist` folder.
+* `public` folder contains `_locales`, `img` and other files, folder that **ARE NOT** modified during build stage and copied straight to the `dist` folder.
 * `src` folder contains files and folders which **ARE** modified during build process.
     * `lib` folder contains every function and class that is reusable through the whole extension.
     * `pages` folder contains every file that is related to building extension's pages.

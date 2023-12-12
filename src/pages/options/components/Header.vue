@@ -7,7 +7,7 @@ import RouterCategoryEntry from './RouterCategoryEntry.vue';
     <header id="main-header" class="flex justify-center align-middle bg-steam-dark-bg text-steam-light sticky flex-wrap">
         <div id="extenion-logo-container" class="flex items-center w-[62rem] h-20 uppercase">
             <div id="logo-wrapper h-14">
-                <img class="h-14" src="/static/ste-transparent-256.png" id="extension-logo" draggable="false" />
+                <img class="h-14" src="/img/default/ste-transparent-256.png" id="extension-logo" draggable="false" />
             </div>
             <h1 class="font-bold text-2.5xl px-2" id="extension-title">Steam Tiny Enhancements</h1>
         </div>

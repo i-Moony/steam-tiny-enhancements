@@ -5,7 +5,7 @@ async function createNotification(id:NotificationId, options?:Partial<browser.no
     const defaultOptions:browser.notifications.CreateNotificationOptions =
     {
         type: "basic",
-        iconUrl: browser.runtime.getURL("static/ste-square-256.png"),
+        iconUrl: browser.runtime.getURL("img/default/ste-square-256.png"),
 
         title: browser.i18n.getMessage(`${id}Title`),
         message: browser.i18n.getMessage(`${id}Message`),
