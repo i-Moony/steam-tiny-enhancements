@@ -8,6 +8,7 @@ interface SensitiveStorageData
 {
     sessionId: string,
     userId: string,
+    userCustomId: string,
 };
 
 interface LocalStorageData extends StorageData, SensitiveStorageData {};
@@ -20,12 +21,14 @@ class LocalStorage
         userId: null,
         debug: false,
         notifyOnUpdate: true,
+        userCustomId: null,
     };
 
     public static sensitiveKeys:Array<keyof SensitiveStorageData> =
     [
         "sessionId",
         "userId",
+        'userCustomId',
     ];
 
     public static async get<T>(key:keyof LocalStorageData): Promise<T | undefined>
