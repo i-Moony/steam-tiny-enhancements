@@ -1,4 +1,7 @@
-async function fetchBasicInformation(userCustomId:string, sessionId:string): Promise<null>
+import { InventoryContext } from "../data/inventory_context";
+import scrapeVariables from "../data/scrape_variables";
+
+async function fetchBasicInformation(userCustomId:string, sessionId:string): Promise<InventoryContext>
 {
     if (!userCustomId || !sessionId)
         return null;
@@ -18,15 +21,17 @@ async function fetchBasicInformation(userCustomId:string, sessionId:string): Pro
         return null;
     };
 
-    const parser = new DOMParser();
-    const html = parser.parseFromString(await response.text(), "text/html");
+    const htmlText = await response.text();
 
-    const header = html.querySelector("#global_header");
-    const generalScript = header.nextElementSibling;
+    const parser = new DOMParser();
+    const html = parser.parseFromString(htmlText, "text/html");
+    
     const economyScriptContainer = html.querySelector("#responsive_page_template_content");
     const economyScript = economyScriptContainer.querySelector("script");
 
-    return null;
+    const inventoryContext = scrapeVariables<InventoryContext>(economyScript.textContent);
+
+    return inventoryContext;
 };
 
 export default fetchBasicInformation;

@@ -20,6 +20,12 @@ import RouterCategoryEntry from './RouterCategoryEntry.vue';
                 <router-category-entry to="/settings/developer">
                     Developer
                 </router-category-entry>
+                <router-category-entry to="/inventory">
+                    Inventory
+                </router-category-entry>
+                <router-category-entry to="/onboarding">
+                    Onboarding
+                </router-category-entry>
             </router-category>
         </div>
         <hr id="down-outline">

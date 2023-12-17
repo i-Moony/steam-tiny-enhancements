@@ -1,20 +1,38 @@
 <script setup lang="ts">
-    import fetchBasicInformation from '../../../lib/inventory/fetchBasicInformation';
-    import fetchCustomId from "../../../lib/profile/fetchCustomId";
-    import { LocalStorage } from '../../../lib/storage/local';
+    import fetchBasicInformation from "@/lib/inventory/fetch_basic_information";
+    import fetchCustomId from "@/lib/profile/fetchCustomId";
+    import fetchInventories from "@/lib/inventory/fetch_inventories";
+    import { LocalStorage } from '@/lib/storage/local';
+    import { onMounted } from "vue";
 
-    let storage = await LocalStorage.getAll();
+    onMounted(wait);
 
-    if (!storage.userCustomId)
+    async function wait()
     {
-        const customId = await fetchCustomId(storage.userId);
+        let storage = await LocalStorage.getAll();
 
-        await LocalStorage.set({userCustomId: customId});
+        if (!storage.userCustomId || storage.userCustomId === "null")
+        {
+            const customId = await fetchCustomId(storage.userId);
 
-        storage = await LocalStorage.getAll();
+            await LocalStorage.set({userCustomId: customId});
+
+            storage = await LocalStorage.getAll();
+        };
+
+        const basicInformation = await fetchBasicInformation(storage.userCustomId, storage.sessionId);
+
+        try
+        {
+            const inventory = await fetchInventories(basicInformation.g_rgAppContextData, storage.userId, storage.sessionId);
+
+            console.log(inventory);
+        }
+        catch (e)
+        {
+            console.log(e);
+        };
     };
-
-    await fetchBasicInformation(storage.userCustomId, storage.sessionId);
 </script>
 
 <template>
